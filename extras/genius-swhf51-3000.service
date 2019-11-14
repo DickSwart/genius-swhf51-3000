@@ -1,0 +1,31 @@
+# 1) copy this file to /lib/systemd/system/
+# 2) reload the daemon (systemctl daemon-reload)
+# 3) enable the service
+# 4) start the service
+# ----------------------------------------------------
+# journaled messages : journalctl -lf -u genius-swhf51-3000
+# enable service     : systemctl enable genius-swhf51-3000
+# enable start       : systemctl start genius-swhf51-3000
+# stop service       : systemctl stop genius-swhf51-3000
+# disable service    : systemctl disable genius-swhf51-3000
+# status service     : systemctl status genius-swhf51-3000
+# restart service    : systemctl restart genius-swhf51-3000
+# ----------------------------------------------------
+
+[Unit]
+Description=LIRC Remote and API NodeJS Application
+After=network-online.target
+
+[Service]
+Restart=on-failure
+# do chdir before running the service
+WorkingDirectory=/home/volumio/genius-swhf51-3000/bin
+ExecStart=/usr/local/bin/node www
+# limit CPU and RAM quota for our service
+CPUAccounting=true
+CPUQuota=10%
+MemoryAccounting=true
+MemoryLimit=50M
+
+[Install]
+WantedBy=multi-user.target
