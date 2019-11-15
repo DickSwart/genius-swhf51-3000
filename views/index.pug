@@ -1,0 +1,34 @@
+extends structure/_layout
+
+block content
+  .row.d-none.d-sm-block
+    .col
+      h1.mt-5= title
+      p.lead Remote Control for the Genius SW-HF5.1 3000, speaker system.
+
+
+  .row.justify-content-lg-center
+    .col-sm-5
+      .remote-control
+        .d-flex.justify-content-end
+          button(href="/api/remote/cmd/POWER",type="button").cmd-link.cmd-once.btn.power-btn.btn-circle.m-1 #[i.fas.fa-power-off.fa-2x]
+
+        .d-flex.justify-content-center
+          nav.volume-control
+            button(href="/api/remote/cmd/WOOF+",type="button").button.top.cmd-link.cmd-repeater
+              span.woof #[i.fas.fa-plus.fa-2x] WOOF
+            button(href="/api/remote/cmd/VOL+",type="button").button.right.cmd-link.cmd-repeater
+              span.vol #[i.fas.fa-plus.fa-2x] VOL
+            button(href="/api/remote/cmd/VOL-",type="button").button.left.cmd-link.cmd-repeater
+              span.vol #[i.fas.fa-minus.fa-2x] VOL
+            button(href="/api/remote/cmd/WOOF-",type="button").button.bottom.cmd-link.cmd-repeater
+              span.woof #[i.fas.fa-minus.fa-2x] WOOF
+            button(href="/api/remote/cmd/MUTE",type="button").center-button.cmd-link.cmd-repeater
+              span.mute #[i.fas.fa-volume-mute.fa-3x]
+
+        .d-flex.justify-content-between.mb-3
+          .p-2
+            button(href="/api/remote/cmd/5.1",type="button").cmd-link.cmd-once.btn.btn-secondary.source-btn.btn-lg 5.1
+          .p-2
+            button(href="/api/remote/cmd/AUX",type="button").cmd-link.cmd-once.btn.btn-secondary.source-btn.btn-lg AUX
+
