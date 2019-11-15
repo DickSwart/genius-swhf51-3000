@@ -24,15 +24,13 @@ html(lang="en").h-100
         link(rel='stylesheet', href='/css/main.css')
   
   body.d-flex.flex-column.h-100
-    unless hideHeader
-      include _header.pug
+    include _header.pug
 
     main.flex-shrink-0(role="main")
       .container
         block content
 
-    unless hideFooter
-      include _footer.pug
+    include _footer.pug
 
   block scripts
     script(src="/js/jquery.min.js")

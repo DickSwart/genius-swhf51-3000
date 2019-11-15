@@ -3,7 +3,7 @@ var router = express.Router();
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', { title: "Remote Control", navBarTitle: "", hideHeader: true, hideFooter: true });
+  res.render('index', { title: "", navBarTitle: "Genius SW-HF5.1 3000 Remote Control" });
 });
 
 module.exports = router;

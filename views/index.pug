@@ -4,8 +4,6 @@ block content
   .row.d-none.d-sm-block
     .col
       h1.mt-5= title
-      p.lead Remote Control for the Genius SW-HF5.1 3000, speaker system.
-
 
   .row.justify-content-lg-center
     .col-sm-5
@@ -26,9 +24,37 @@ block content
             button(href="/api/remote/cmd/MUTE",type="button").center-button.cmd-link.cmd-repeater
               span.mute #[i.fas.fa-volume-mute.fa-3x]
 
-        .d-flex.justify-content-between.mb-3
+        .d-flex.justify-content-between.pt-2.pb-2
           .p-2
-            button(href="/api/remote/cmd/5.1",type="button").cmd-link.cmd-once.btn.btn-secondary.source-btn.btn-lg 5.1
+            button(href="/api/remote/cmd/5.1",type="button").cmd-link.cmd-once.btn.source-btn.btn-lg 5.1
           .p-2
-            button(href="/api/remote/cmd/AUX",type="button").cmd-link.cmd-once.btn.btn-secondary.source-btn.btn-lg AUX
+            button(href="/api/remote/cmd/AUX",type="button").cmd-link.cmd-once.btn.source-btn.btn-lg AUX
 
+        hr.mt-3
+
+        .row.justify-content-center.pt-4.pb-4
+          .col.text-center
+            div(role="group").btn-group-vertical.settings-btn-group
+              button(href="/api/remote/cmd/SURR+",type="button").cmd-link.cmd-repeater.btn.settings-btn #[i.fas.fa-plus.fa-2x]
+              .setting-name SURROUND
+              button(href="/api/remote/cmd/SURR-",type="button").cmd-link.cmd-repeater.btn.settings-btn #[i.fas.fa-minus.fa-2x]
+          .col.text-center
+            div(role="group").btn-group-vertical.settings-btn-group
+              button(href="/api/remote/cmd/CEN+",type="button").cmd-link.cmd-repeater.btn.settings-btn #[i.fas.fa-plus.fa-2x]
+              .setting-name CENTER
+              button(href="/api/remote/cmd/CEN-",type="button").cmd-link.cmd-repeater.btn.settings-btn #[i.fas.fa-minus.fa-2x]
+          .col.text-center
+            div(role="group").btn-group-vertical.settings-btn-group
+              button(href="/api/remote/cmd/FRONT+",type="button").cmd-link.cmd-repeater.btn.settings-btn #[i.fas.fa-plus.fa-2x]
+              .setting-name FRONT
+              button(href="/api/remote/cmd/FRONT-",type="button").cmd-link.cmd-repeater.btn.settings-btn #[i.fas.fa-minus.fa-2x]
+
+        hr.mt-3
+        
+        .row.pt-3
+          .col
+            .p-2
+              button(href="/api/remote/cmd/RESET",type="button").cmd-link.cmd-once.btn.btn-secondary.function-btn.btn-lg.btn-block RESET
+          .col
+            .p-2
+              button(href="/api/remote/cmd/REFRESH",type="button").cmd-link.cmd-once.btn.btn-secondary.function-btn.btn-lg.btn-block REFRESH
