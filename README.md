@@ -21,7 +21,7 @@ Run the application.
 $ npm start
 
 # Run application development
-$ npm start-dev
+$ npm run start-dev
 ```
 
 ## Helpful resources
