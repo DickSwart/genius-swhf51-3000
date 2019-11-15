@@ -27,11 +27,12 @@ body {
     color: #fff; }
   .remote-control .source-btn {
     width: 100px !important;
-    background: #4ab52f; }
+    background: #9a2fb5;
+    color: white; }
   .remote-control .settings-btn-group .settings-btn {
-    background: #D77838;
+    background: #4ab52f;
     height: 70px;
-    width: 70px;
+    width: 80px;
     color: #fff; }
     .remote-control .settings-btn-group .settings-btn:first-of-type {
       border-radius: 50% 50% 0 0; }

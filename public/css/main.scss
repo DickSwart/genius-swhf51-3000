@@ -1,7 +1,8 @@
 // Bootstrap
 $primary-color: #4ab52f;
 $secondary-color: #CE3648;
-$tertiary-color: #D77838;
+// $tertiary-color: #D77838;
+$tertiary-color: complement($primary-color);
 $background-color: #222222;
 $dark-primary-color: #1c7804;
 $light-primary-color: #91e07c;
@@ -52,13 +53,15 @@ body {
   }
   .source-btn {
     width: 100px !important;
-    background: $primary-color;
+    // background: $primary-color;
+    background: $tertiary-color;
+    color: white;
   }
   .settings-btn-group {
     .settings-btn {
-      background: $tertiary-color;
+      background: $primary-color;
       height: 70px;
-      width: 70px;
+      width: 80px;
       color: #fff;
       &:first-of-type {
         border-radius: 50% 50% 0 0;
