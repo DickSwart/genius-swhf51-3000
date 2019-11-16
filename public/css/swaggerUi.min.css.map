@@ -1,0 +1,10 @@
+{
+    "version": 3,
+    "mappings": "AAEA,AACE,WADS,CACT,OAAO,AAAC,CACN,gBAAgB,CCUA,OAAO,CDTxB,AAHH,AAKE,WALS,CAKT,KAAK,AAAC,CACJ,MAAM,CAAE,MAAM,CACf",
+    "sources": [
+        "../scss/swaggerUi.scss",
+        "../scss/_variables.scss"
+    ],
+    "names": [],
+    "file": "swaggerUi.min.css"
+}

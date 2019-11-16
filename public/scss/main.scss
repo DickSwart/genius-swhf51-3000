@@ -1,4 +1,5 @@
 @import "_variables";
+
 // Custom Styles
 body {
   background-color: $remote-control-bg;
@@ -12,6 +13,7 @@ body {
 .site-header {
   nav.navbar {
     background-color: $primary-color;
+
     .navbar-brand {
       font-size: 2rem;
       font-weight: 600;
@@ -23,18 +25,23 @@ body {
   button {
     color: #fff;
   }
+
   button,
   .btn {
+
     &:focus,
     &.focus {
       outline: none;
       box-shadow: none;
     }
   }
+
   hr {
     border-color: $light-primary-color;
   }
+
   background-color: #292929;
+
   .btn-circle {
     text-align: center;
     padding: 0;
@@ -43,13 +50,16 @@ body {
     height: 70px;
     font-size: 1.3rem;
   }
+
   .power-btn {
     background: $secondary-color;
   }
+
   .source-btn {
     width: 100px !important;
     background: $tertiary-color;
   }
+
   .settings-btn-group {
     .settings-btn {
       background: $primary-color;
@@ -57,13 +67,16 @@ body {
       width: 80px;
       color: rgba(0, 0, 0, 0.15);
       text-shadow: 1px 1px 2px #fff, 0px 0px 0px rgba(0, 0, 0, 0.4);
+
       &:first-of-type {
         border-radius: 50% 50% 0 0;
       }
+
       &:last-of-type {
         border-radius: 0 0 50% 50%;
       }
     }
+
     .setting-name {
       text-align: center;
       font-size: 0.8rem;
@@ -85,9 +98,11 @@ nav.volume-control {
   box-shadow: inset -6px 0 6px -3px #ddd, inset 6px 0 6px -3px #fff, inset 0 0 0 6px #eee, inset 1px 0 2px 6px $shadow, 1px 0 4px rgba(0, 0, 0, 0.8);
   box-sizing: border-box;
   position: relative;
+
   a {
     text-decoration: none;
   }
+
   .center-button {
     display: block;
     height: 38%;
@@ -98,11 +113,13 @@ nav.volume-control {
     background: #fff;
     border-radius: 50%;
     box-shadow: 1px 0 4px rgba(0, 0, 0, 0.8);
+
     span {
       top: 35px;
       left: 35px;
     }
   }
+
   .button {
     display: block;
     width: 46%;
@@ -111,6 +128,7 @@ nav.volume-control {
     position: relative;
     float: left;
     box-shadow: 1px 0px 3px 1px $shadow, inset 0 0 0 1px #fff;
+
     &::after {
       content: "";
       display: block;
@@ -120,10 +138,12 @@ nav.volume-control {
       position: absolute;
       border-radius: inherit;
     }
+
     &.top {
       border-radius: 100% 0 0 0;
-      background: -webkit-radial-gradient( bottom right, ellipse cover, $button-in 35%, $button-out 75%);
-      background: radial-gradient( bottom right, ellipse cover, $button-in 35%, $button-out 75%);
+      background: -webkit-radial-gradient(bottom right, ellipse cover, $button-in 35%, $button-out 75%);
+      background: radial-gradient(bottom right, ellipse cover, $button-in 35%, $button-out 75%);
+
       &::after {
         bottom: 0;
         right: 0;
@@ -132,14 +152,17 @@ nav.volume-control {
         -moz-transform: skew(-3deg, -3deg) scale(0.96);
         transform: skew(-3deg, -3deg) scale(0.96);
       }
+
       span {
         top: 35px;
         left: 35px;
       }
     }
+
     &.right {
       border-radius: 0 100% 0 0;
-      background: -webkit-radial-gradient( bottom left, ellipse cover, $button-in 35%, $button-out 75%);
+      background: -webkit-radial-gradient(bottom left, ellipse cover, $button-in 35%, $button-out 75%);
+
       &::after {
         bottom: 0;
         left: 0;
@@ -148,15 +171,18 @@ nav.volume-control {
         -moz-transform: skew(3deg, 3deg) scale(0.96);
         transform: skew(3deg, 3deg) scale(0.96);
       }
+
       span {
         top: 40px;
         left: 50px;
       }
     }
+
     &.left {
       border-radius: 0 0 0 100%;
-      background: -webkit-radial-gradient( top right, ellipse cover, $button-in 35%, $button-out 75%);
-      background: radial-gradient( top right, ellipse cover, $button-in 35%, $button-out 75%);
+      background: -webkit-radial-gradient(top right, ellipse cover, $button-in 35%, $button-out 75%);
+      background: radial-gradient(top right, ellipse cover, $button-in 35%, $button-out 75%);
+
       &::after {
         top: 0;
         right: 0;
@@ -165,15 +191,18 @@ nav.volume-control {
         -moz-transform: skew(3deg, 3deg) scale(0.96);
         transform: skew(3deg, 3deg) scale(0.96);
       }
+
       span {
         top: 45px;
         left: 45px;
       }
     }
+
     &.bottom {
       border-radius: 0 0 100% 0;
-      background: -webkit-radial-gradient( top left, ellipse cover, $button-in 35%, $button-out 75%);
-      background: radial-gradient( top left, ellipse cover, $button-in 35%, $button-out 75%);
+      background: -webkit-radial-gradient(top left, ellipse cover, $button-in 35%, $button-out 75%);
+      background: radial-gradient(top left, ellipse cover, $button-in 35%, $button-out 75%);
+
       &::after {
         top: 0;
         left: 0;
@@ -182,12 +211,14 @@ nav.volume-control {
         -moz-transform: skew(-3deg, -3deg) scale(0.96);
         transform: skew(-3deg, -3deg) scale(0.96);
       }
+
       span {
         top: 40px;
         left: 40px;
       }
     }
   }
+
   span {
     -webkit-transform: rotate(-45deg);
     -moz-transform: rotate(-45deg);
@@ -200,10 +231,12 @@ nav.volume-control {
     color: rgba(0, 0, 0, 0.15);
     text-shadow: 1px 1px 2px #fff, 0px 0px 0px rgba(0, 0, 0, 0.4);
     font-family: impact;
+
     &.woof,
     &.mute {
       width: 50px;
     }
+
     &.vol {
       width: 40px;
     }
@@ -217,10 +250,11 @@ nav.volume-control {
   body {
     background-color: $background-color;
   }
+
   .remote-control {
-    border-radius: .25rem!important;
-    padding: 1rem!important;
-    border: 1px solid rgba(0, 0, 0, 0.3)!important;
+    border-radius: .25rem !important;
+    padding: 1rem !important;
+    border: 1px solid rgba(0, 0, 0, 0.3) !important;
     margin-bottom: 3rem;
   }
 }
