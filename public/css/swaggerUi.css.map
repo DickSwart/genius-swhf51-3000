@@ -1,0 +1,10 @@
+{
+	"version": 3,
+	"file": "swaggerUi.css",
+	"sources": [
+		"swaggerUi.scss",
+		"_variables.scss"
+	],
+	"names": [],
+	"mappings": "AACA,AACE,WADS,CACT,OAAO,CAAC;EACN,gBAAgB,ECWA,OAAO,GDVxB;;AAHH,AAIE,WAJS,CAIT,KAAK,CAAC;EACJ,MAAM,EAAE,MAAM,GACf"
+}

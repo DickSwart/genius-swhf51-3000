@@ -1,0 +1,305 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "version": "1.0.0",
+    "title": "Genius SW-HF5.1 3000 Remote Rest API",
+    "description": "RESTFul API for Genius SW-HF5.1 3000 speaker system remote control.",
+    "license": {
+      "name": "MIT",
+      "url": "https://opensource.org/licenses/MIT"
+    },
+    "contact": {
+      "name": "API Support",
+      "email": "dick@swart.ninja",
+      "url": "http://swart.ninja"
+    }
+  },
+  "externalDocs": {
+    "description": "Wiki",
+    "url": "https://github.com/DickSwart/genius-swhf51-3000/wiki"
+  },
+  "host": "localhost:8080",
+  "basePath": "/api/v1",
+  "tags": [
+    {
+      "name": "Remotes",
+      "description": "API for remotes in the system"
+    },
+    {
+      "name": "Default Remote",
+      "description": "API for the default remote in the system."
+    }
+  ],
+  "schemes": [
+    "http"
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/refresh": {
+      "post": {
+        "tags": [
+          "Other"
+        ],
+        "summary": "Refresh lirc_node",
+        "description": "Call the init method of the lirc_node object.",
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "404": {
+            "description": "Not found"
+          },
+          "500": {
+            "description": "Internal server error"
+          }
+        }
+      }
+    },
+    "/remotes": {
+      "get": {
+        "tags": [
+          "Remotes"
+        ],
+        "summary": "Get all remote and commands",
+        "description": "Get all remote and commands",
+        "responses": {
+          "200": {
+            "description": "A list of remote objects",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Remote"
+              }
+            }
+          },
+          "500": {
+            "description": "Internal server error"
+          }
+        }
+      }
+    },
+    "/remotes/{remote}": {
+      "get": {
+        "tags": [
+          "Remotes"
+        ],
+        "summary": "Get a remote and its commands",
+        "description": "Get a remote and its commands",
+        "parameters": [
+          {
+            "name": "remote",
+            "in": "path",
+            "description": "remote name",
+            "type": "string",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Remote object.",
+            "schema": {
+              "$ref": "#/definitions/Remote"
+            }
+          },
+          "404": {
+            "$ref": "#/definitions/404Error"
+          },
+          "500": {
+            "description": "Internal server error"
+          }
+        }
+      }
+    },
+    "/remotes/{remote}/{command}": {
+      "post": {
+        "tags": [
+          "Remotes"
+        ],
+        "summary": "Post remote command",
+        "description": "Post remote command",
+        "parameters": [
+          {
+            "name": "remote",
+            "in": "path",
+            "description": "remote name",
+            "type": "string",
+            "required": true
+          },
+          {
+            "name": "command",
+            "in": "path",
+            "description": "remote name",
+            "type": "string",
+            "required": true
+          },
+          {
+            "in": "body",
+            "name": "method",
+            "description": "Optional command method value",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "method": {
+                  "type": "string",
+                  "enum": [
+                    "once",
+                    "send_start",
+                    "send_end"
+                  ]
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "404": {
+            "$ref": "#/definitions/404Error"
+          },
+          "500": {
+            "description": "Internal server error"
+          }
+        }
+      }
+    },
+    "/remote": {
+      "get": {
+        "tags": [
+          "Default Remote"
+        ],
+        "summary": "Get a remote and its commands",
+        "description": "Get a remote and its commands",
+        "parameters": [
+          {
+            "name": "remote",
+            "in": "path",
+            "description": "remote name",
+            "type": "string",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Remote object.",
+            "schema": {
+              "$ref": "#/definitions/Remote"
+            }
+          },
+          "404": {
+            "$ref": "#/definitions/404Error"
+          },
+          "500": {
+            "description": "Internal server error"
+          }
+        }
+      }
+    },
+    "/remote/{command}": {
+      "post": {
+        "tags": [
+          "Default Remote"
+        ],
+        "summary": "Post remote command",
+        "description": "Post remote command",
+        "parameters": [
+          {
+            "name": "command",
+            "in": "path",
+            "description": "remote name",
+            "type": "string",
+            "required": true
+          },
+          {
+            "in": "body",
+            "name": "method",
+            "description": "Optional command method value",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "method": {
+                  "type": "string",
+                  "enum": [
+                    "once",
+                    "send_start",
+                    "send_end"
+                  ]
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "404": {
+            "$ref": "#/definitions/404Error"
+          },
+          "500": {
+            "description": "Internal server error"
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "Remote": {
+      "required": [
+        "name"
+      ],
+      "properties": {
+        "name": {
+          "type": "string",
+          "uniqueItems": true,
+          "example": "GeniusSW-HF5.1-3000"
+        },
+        "commands": {
+          "type": "object",
+          "items": {
+            "type": "string"
+          },
+          "example": [
+            "POWER",
+            "VOL+",
+            "VOL-",
+            "MUTE",
+            "WOOF+",
+            "WOOF-",
+            "AUX",
+            "5.1",
+            "SURR+",
+            "SURR-",
+            "CEN+",
+            "CEN-",
+            "FRONT+",
+            "FRONT-",
+            "RESET"
+          ]
+        }
+      }
+    },
+    "404Error": {
+      "description": "Not found",
+      "properties": {
+        "error": {
+          "type": "object",
+          "properties": {
+            "code": {
+              "type": "number"
+            },
+            "message": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "GeniusSW-HF5.1-3000": [
+    "POWER",
+    "VOL+",
+    "VOL-",
+    "MUTE",
+    "WOOF+",
+    "WOOF-",
+    "AUX",
+    "5.1",
+    "SURR+",
+    "SURR-",
+    "CEN+",
+    "CEN-",
+    "FRONT+",
+    "FRONT-",
+    "RESET"
+  ],
+  "XboxOne": [
+    "Power",
+    "Up",
+    "Select"
+  ],
+  "PanasonicTV": [
+    "Power",
+    "Xbox360",
+    "Wii",
+    "VolumeUp",
+    "VolumeDown",
+    "DTV/CBL"
+  ]
+}

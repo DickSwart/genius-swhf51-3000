@@ -1,18 +1,4 @@
-// Bootstrap
-$primary-color: #4ab52f;
-$secondary-color: #CE3648;
-// $tertiary-color: #D77838;
-$tertiary-color: complement($primary-color);
-$background-color: #222222;
-$dark-primary-color: #1c7804;
-$light-primary-color: #91e07c;
-$bg: $primary-color;
-$shadow: rgba(0, 0, 0, 0.4);
-$shadow2: rgba(56, 56, 56, 0.4);
-$button-in: #fff;
-$button-out: #eee;
-$footer-bg-color: #292929;
-$remote-control-bg: #292929;
+@import "_variables";
 // Custom Styles
 body {
   background-color: $remote-control-bg;

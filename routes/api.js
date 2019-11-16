@@ -1,61 +1,96 @@
 var express = require('express');
-var lircNode = require('lirc_node');
+var _ = require('lodash');
 var router = express.Router();
 
-function geniusRemoteExist() {
-  return lircNode.remotes.hasOwnProperty('genius');
+function getRemotes(lircNode) {
+  if (!lircNode || !lircNode.remotes) {
+    return [];
+  }
+  return _.map(lircNode.remotes, (value, key) => ({
+    name: key,
+    commands: value || []
+  }));
 }
 
-function geniusRemoteCmdExist(cmd) {
-  return geniusRemoteExist() && (lircNode.remotes['genius'].indexOf(cmd) !== -1);
+function getRemoteByName(lircNode, remoteName) {
+  return _.find(getRemotes(lircNode), { 'name': remoteName });
 }
 
-/* GET REST API specifications page. */
-router.get('/', function(req, res, next) {
-  res.render('api', { title: 'REST API for Genius SW-HF5.1 3000', navBarTitle: "Genius SW-HF5.1 3000 - Speaker System", hideHeader: false, hideFooter: false });
-});
+function commandExist(remoteObj, cmd) {
+  return (remoteObj && remoteObj.commands && Array.isArray(remoteObj.commands) && remoteObj.commands.indexOf(cmd) !== -1);
+}
 
-// GET remote
-// List all commands
-router.get('/remote', function(req, res) {
-  if (geniusRemoteExist()) {
-    res.json(lircNode.remotes['genius']);
+function sendLircCommand(req, remoteName) {
+  var lircNode = req.lircNode;
+  var cmd = req.params.command;
+  var method = req.body.method;
+  const remote = getRemoteByName(lircNode, remoteName);
+
+  if (commandExist(remote, cmd)) {
+    switch (method) {
+      case 'send_start':
+        lircNode.irsend.send_start(remoteName, cmd, function() {});
+        break;
+      case 'send_stop':
+        lircNode.irsend.send_stop(remoteName, cmd, function() {});
+        break;
+      default:
+        lircNode.irsend.send_once(remoteName, cmd, function() {});
+        break;
+    }
+    return true;
+  } else {
+    return false;
+  }
+}
+
+// POST refresh
+router.post('/refresh', function(req, res) {
+  if (req.lircNode) {
+    req.lircNode.init();
+    res.setHeader('Cache-Control', 'no-cache');
+    res.sendStatus(200);
   } else {
     res.sendStatus(404);
   }
+});
+
+// GET remotes
+router.get('/remotes', function(req, res) {
+  res.json(getRemotes(req.lircNode));
+});
+
+router.get('/remotes/:remote', function(req, res) {
+  var remote = getRemoteByName(req.lircNode, req.params.remote);
+  return (remote) ? res.json(remote) : res.status(404).send({ error: { code: 404, message: `Remote '${req.params.remote}' not found.` } });
 });
 
 // POST remote command
-router.post('/remote/cmd/:command', function(req, res) {
-  if (geniusRemoteCmdExist(req.params.command)) {
-    lircNode.irsend.send_once('genius', req.params.command, function() {});
+router.post('/remotes/:remote/:command', function(req, res) {
+  if (sendLircCommand(req, req.params.remote)) {
     res.setHeader('Cache-Control', 'no-cache');
     res.sendStatus(200);
   } else {
-    res.sendStatus(404);
+    res.status(404).send({ error: { code: 404, message: `Remote '${req.params.remote}': Unknown command '${req.params.command}'.` } });
   }
 });
 
-// Start sending :remote/:command repeatedly
-router.post('/remote/cmd/:command/send_start', function(req, res) {
-  if (geniusRemoteCmdExist(req.params.command)) {
-    lircNode.irsend.send_start('genius', req.params.command, function() {});
+// GET default remote commands
+router.get('/remote', function(req, res) {
+  var remote = getRemoteByName(req.lircNode, req.lircNode.defaultRemoteName);
+  return (remote) ? res.json(remote) : res.status(404).send({ error: { code: 404, message: `Remote '${req.params.remote}' not found.` } });
+});
+
+// POST default remote command
+router.post('/remote/:command', function(req, res) {
+  var remoteName = req.lircNode.defaultRemoteName;
+  if (sendLircCommand(req, remoteName)) {
     res.setHeader('Cache-Control', 'no-cache');
     res.sendStatus(200);
   } else {
-    res.sendStatus(404);
+    res.status(404).send({ error: { code: 404, message: `Remote '${remoteName}': Unknown command '${req.params.command}'.` } });
   }
 });
 
-// Stop sending :remote/:command repeatedly
-router.post('/remote/cmd/:command/send_stop', function(req, res) {
-  if (geniusRemoteCmdExist(req.params.command)) {
-    lircNode.irsend.send_stop('genius', req.params.command, function() {});
-    res.setHeader('Cache-Control', 'no-cache');
-    res.sendStatus(200);
-  } else {
-    res.sendStatus(404);
-  }
-});
 
 module.exports = router;

@@ -1,6 +1,14 @@
 extends structure/_layout
 
 block content
-  h1= message
-  h2= error.status
-  pre #{error.stack}
+  .d-flex.justify-content-center.align-items-center.mt-5.mb-5
+    h1.display-1.mr-3.pr-3.align-top.border-right.inline-block.align-content-center #{error.status}
+    .inline-block.align-middle
+      h2.font-weight-normal.display-2 #{message}
+
+  if isDev
+    .row
+      .col
+        div(role="alert").alert.alert-light
+          pre
+            code #{error.stack}
