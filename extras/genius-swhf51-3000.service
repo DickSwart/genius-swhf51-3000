@@ -1,5 +1,5 @@
 # 1) copy this file to (/lib/systemd/system/)
-#    $ sudo cp ~/genius-swhf51-3000/extras/genius-swhf51-3000.service /lib/systemd/system/
+#    $ sudo cp /home/volumio/genius-swhf51-3000/extras/genius-swhf51-3000.service /lib/systemd/system/
 # 2) reload the daemon (systemctl daemon-reload)
 #    $ sudo systemctl daemon-reload
 # 3) enable the service
@@ -17,13 +17,13 @@
 # ----------------------------------------------------
 
 [Unit]
-Description=LIRC Remote and RESTful API
+Description=LIRC Remote and API NodeJS Application
 After=network-online.target
 
 [Service]
 Restart=on-failure
 # do chdir before running the service
-WorkingDirectory=~/genius-swhf51-3000/bin
+WorkingDirectory=/home/volumio/genius-swhf51-3000/bin
 ExecStart=/usr/local/bin/node www
 # limit CPU and RAM quota for our service
 CPUAccounting=true
