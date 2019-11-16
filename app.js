@@ -47,7 +47,13 @@ app.use('/api/v1', function(req, res, next) {
 
 app.use('/', indexRouter);
 app.use('/api/v1', apiRouter);
-app.use('/api/docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument, { customCssUrl: '/css/swaggerUi.css', customJs: '/js/swaggerUi.js' }));
+
+var swaggerOpt = {
+  customfavIcon: '/images/favicon.ico',
+  customCssUrl: '/css/swaggerUi.css',
+  customJs: '/js/swaggerUi.js'
+}
+app.use('/api/docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument, swaggerOpt));
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

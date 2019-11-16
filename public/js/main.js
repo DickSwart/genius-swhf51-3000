@@ -20,42 +20,22 @@ $(function() {
 
   // cmd-once buttons send a single command when clicked
   $('.cmd-once').on('click', function(evt) {
-    $.ajax({
-      type: "POST",
-      url: $(this).attr('href'),
-      success: function(data) {
-        console.log('Success: cmd-once', data);
-      },
-      error: function(xhr, type) {
-        console.log('Error: cmd-once', { xhr, type });
-      }
-    });
+    $.post($(this).attr('href'), function(data, textStatus, jqXHR) {});
   });
 
   // cmd-repeater buttons repeatedly send the command while being clicked
   // (uses send_start and send_stop behind the scenes)
   $('.cmd-repeater').on('mousedown touchstart', function(evt) {
-    $.ajax({
-      type: "POST",
-      url: $(this).attr('href') + '/send_start',
-      success: function(data) {
-        console.log('Success: cmd-repeater', data);
-      },
-      error: function(xhr, type) {
-        console.log('Error: cmd-repeater', { xhr, type });
-      }
-    });
+    // const data = $(this).attr('data-cmd-method');
+    const data = { method: "send_start" }
+    $.post($(this).attr('href'), data, function(data, textStatus, jqXHR) {});
     $(this).attr('data-active', true);
   });
 
   // Capture any kind of mouse or touch "out" event
   $('.cmd-repeater').on('mouseup touchend touchleave touchcancel', function(evt) {
-    $.ajax({
-      type: "POST",
-      url: $(this).attr('href') + '/send_stop',
-      success: function(data) {},
-      error: function(xhr, type) {}
-    });
+    const data = { method: "send_stop" }
+    $.post($(this).attr('href'), data, function(data, textStatus, jqXHR) {});
     $(this).attr('data-active', false);
   });
 
@@ -86,14 +66,14 @@ $(function() {
   // Remove 300ms delay after tapping
   OSUR.fastClick = new FastClick(document.body);
 
-  // If the appcache file has updated, reload the page automatically
-  function onUpdateReady() {
-    document.location.reload();
-  }
+  // // If the appcache file has updated, reload the page automatically
+  // function onUpdateReady() {
+  //   document.location.reload();
+  // }
 
-  window.applicationCache.addEventListener('updateready', onUpdateReady);
+  // window.applicationCache.addEventListener('updateready', onUpdateReady);
 
-  if (window.applicationCache.status === window.applicationCache.UPDATEREADY) {
-    onUpdateReady();
-  }
+  // if (window.applicationCache.status === window.applicationCache.UPDATEREADY) {
+  //   onUpdateReady();
+  // }
 });

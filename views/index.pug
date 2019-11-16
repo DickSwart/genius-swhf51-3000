@@ -9,52 +9,52 @@ block content
     .col-sm-5
       .remote-control
         .d-flex.justify-content-end
-          button(href="/api/remote/cmd/POWER",type="button").cmd-link.cmd-once.btn.power-btn.btn-circle.m-1 #[i.fas.fa-power-off.fa-2x]
+          button(href="/api/v1/remote/POWER",type="button").cmd-link.cmd-once.btn.power-btn.btn-circle.m-1 #[i.fas.fa-power-off.fa-2x]
 
         .d-flex.justify-content-center
           nav.volume-control
-            button(href="/api/remote/cmd/WOOF+",type="button").button.top.cmd-link.cmd-repeater
+            button(href="/api/v1/remote/WOOF+",type="button").button.top.cmd-link.cmd-repeater
               span.woof #[i.fas.fa-plus.fa-2x] WOOF
-            button(href="/api/remote/cmd/VOL+",type="button").button.right.cmd-link.cmd-repeater
+            button(href="/api/v1/remote/VOL+",type="button").button.right.cmd-link.cmd-repeater
               span.vol #[i.fas.fa-plus.fa-2x] VOL
-            button(href="/api/remote/cmd/VOL-",type="button").button.left.cmd-link.cmd-repeater
+            button(href="/api/v1/remote/VOL-",type="button").button.left.cmd-link.cmd-repeater
               span.vol #[i.fas.fa-minus.fa-2x] VOL
-            button(href="/api/remote/cmd/WOOF-",type="button").button.bottom.cmd-link.cmd-repeater
+            button(href="/api/v1/remote/WOOF-",type="button").button.bottom.cmd-link.cmd-repeater
               span.woof #[i.fas.fa-minus.fa-2x] WOOF
-            button(href="/api/remote/cmd/MUTE",type="button").center-button.cmd-link.cmd-repeater
+            button(href="/api/v1/remote/MUTE",type="button").center-button.cmd-link.cmd-repeater
               span.mute #[i.fas.fa-volume-mute.fa-3x]
 
         .d-flex.justify-content-between.pt-2.pb-2
           .p-2
-            button(href="/api/remote/cmd/5.1",type="button").cmd-link.cmd-once.btn.source-btn.btn-lg 5.1
+            button(href="/api/v1/remote/5.1",type="button").cmd-link.cmd-once.btn.source-btn.btn-lg 5.1
           .p-2
-            button(href="/api/remote/cmd/AUX",type="button").cmd-link.cmd-once.btn.source-btn.btn-lg AUX
+            button(href="/api/v1/remote/AUX",type="button").cmd-link.cmd-once.btn.source-btn.btn-lg AUX
 
         hr.mt-3
 
         .row.justify-content-center.pt-4.pb-4
           .col.text-center
             div(role="group").btn-group-vertical.settings-btn-group
-              button(href="/api/remote/cmd/SURR+",type="button").cmd-link.cmd-repeater.btn.settings-btn #[i.fas.fa-plus.fa-2x]
+              button(href="/api/v1/remote/SURR+",type="button").cmd-link.cmd-repeater.btn.settings-btn #[i.fas.fa-plus.fa-2x]
               .setting-name SURROUND
-              button(href="/api/remote/cmd/SURR-",type="button").cmd-link.cmd-repeater.btn.settings-btn #[i.fas.fa-minus.fa-2x]
+              button(href="/api/v1/remote/SURR-",type="button").cmd-link.cmd-repeater.btn.settings-btn #[i.fas.fa-minus.fa-2x]
           .col.text-center
             div(role="group").btn-group-vertical.settings-btn-group
-              button(href="/api/remote/cmd/CEN+",type="button").cmd-link.cmd-repeater.btn.settings-btn #[i.fas.fa-plus.fa-2x]
+              button(href="/api/v1/remote/CEN+",type="button").cmd-link.cmd-repeater.btn.settings-btn #[i.fas.fa-plus.fa-2x]
               .setting-name CENTER
-              button(href="/api/remote/cmd/CEN-",type="button").cmd-link.cmd-repeater.btn.settings-btn #[i.fas.fa-minus.fa-2x]
+              button(href="/api/v1/remote/CEN-",type="button").cmd-link.cmd-repeater.btn.settings-btn #[i.fas.fa-minus.fa-2x]
           .col.text-center
             div(role="group").btn-group-vertical.settings-btn-group
-              button(href="/api/remote/cmd/FRONT+",type="button").cmd-link.cmd-repeater.btn.settings-btn #[i.fas.fa-plus.fa-2x]
+              button(href="/api/v1/remote/FRONT+",type="button").cmd-link.cmd-repeater.btn.settings-btn #[i.fas.fa-plus.fa-2x]
               .setting-name FRONT
-              button(href="/api/remote/cmd/FRONT-",type="button").cmd-link.cmd-repeater.btn.settings-btn #[i.fas.fa-minus.fa-2x]
+              button(href="/api/v1/remote/FRONT-",type="button").cmd-link.cmd-repeater.btn.settings-btn #[i.fas.fa-minus.fa-2x]
 
         hr.mt-3
         
         .row.pt-3
           .col
             .p-2
-              button(href="/api/remote/cmd/RESET",type="button").cmd-link.cmd-once.btn.btn-secondary.function-btn.btn-lg.btn-block RESET
+              button(href="/api/v1/remote/RESET",type="button").cmd-link.cmd-once.btn.btn-secondary.function-btn.btn-lg.btn-block RESET
           .col
             .p-2
-              button(href="/api/remote/cmd/REFRESH",type="button").cmd-link.cmd-once.btn.btn-secondary.function-btn.btn-lg.btn-block REFRESH
+              button(href="/api/v1/refresh",type="button").cmd-link.cmd-once.btn.btn-secondary.function-btn.btn-lg.btn-block REFRESH
