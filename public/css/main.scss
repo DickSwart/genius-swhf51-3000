@@ -20,10 +20,20 @@ body {
 }
 
 .remote-control {
+  button {
+    color: #fff;
+  }
+  button,
+  .btn {
+    &:focus,
+    &.focus {
+      outline: none;
+      box-shadow: none;
+    }
+  }
   hr {
     border-color: $light-primary-color;
   }
-  // background-color: rgba(0, 0, 0, 0.1);
   background-color: #292929;
   .btn-circle {
     text-align: center;
@@ -35,20 +45,18 @@ body {
   }
   .power-btn {
     background: $secondary-color;
-    color: #fff;
   }
   .source-btn {
     width: 100px !important;
-    // background: $primary-color;
     background: $tertiary-color;
-    color: white;
   }
   .settings-btn-group {
     .settings-btn {
       background: $primary-color;
       height: 70px;
       width: 80px;
-      color: #fff;
+      color: rgba(0, 0, 0, 0.15);
+      text-shadow: 1px 1px 2px #fff, 0px 0px 0px rgba(0, 0, 0, 0.4);
       &:first-of-type {
         border-radius: 50% 50% 0 0;
       }
@@ -125,8 +133,8 @@ nav.volume-control {
         transform: skew(-3deg, -3deg) scale(0.96);
       }
       span {
-        top: 40px;
-        left: 40px;
+        top: 35px;
+        left: 35px;
       }
     }
     &.right {
@@ -170,7 +178,6 @@ nav.volume-control {
         top: 0;
         left: 0;
         box-shadow: inset -2px -2px 2px 0 $shadow2, -5px -5px 0 5px $bg;
-        // box-shadow: inset -2px -3px 2px -2px $shadow, -10px -10px 0 10px $bg;
         -webkit-transform: skew(-3deg, -3deg) scale(0.96);
         -moz-transform: skew(-3deg, -3deg) scale(0.96);
         transform: skew(-3deg, -3deg) scale(0.96);
