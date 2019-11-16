@@ -20,7 +20,6 @@
     "lirc_node": "0.0.4",
     "lodash": "^4.17.15",
     "morgan": "~1.9.1",
-    "node-sass-middleware": "0.11.0",
     "pug": "^2.0.4",
     "swagger-ui-express": "^4.1.2"
   }

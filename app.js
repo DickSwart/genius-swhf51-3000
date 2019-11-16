@@ -4,7 +4,6 @@ var express = require('express');
 var lircNode = require('lirc_node');
 var logger = require('morgan');
 var path = require('path');
-var sassMiddleware = require('node-sass-middleware');
 var swaggerDocument = require('./extras/swagger.json');
 var swaggerUi = require('swagger-ui-express');
 
@@ -31,12 +30,6 @@ app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
-app.use(sassMiddleware({
-  src: path.join(__dirname, 'public'),
-  dest: path.join(__dirname, 'public'),
-  indentedSyntax: false, // true = .sass and false = .scss
-  sourceMap: true
-}));
 app.use(express.static(path.join(__dirname, 'public')));
 
 // Middleware to adjust req
