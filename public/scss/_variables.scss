@@ -6,10 +6,16 @@ $tertiary-color: complement($primary-color);
 $background-color: #222222;
 $dark-primary-color: #1c7804;
 $light-primary-color: #91e07c;
-$bg: $primary-color;
+
 $shadow: rgba(0, 0, 0, 0.4);
 $shadow2: rgba(56, 56, 56, 0.4);
 $button-in: #fff;
 $button-out: #eee;
 $footer-bg-color: #292929;
 $remote-control-bg: #292929;
+$button-bg-color: #fff;
+
+// Volume Control
+$vol-ctl-bg: $primary-color;
+$vol-ctl-border-color: #fff;
+$vol-ctl-btn-bg-color: #fff;

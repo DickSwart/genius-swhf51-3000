@@ -28,7 +28,6 @@ body {
 
   button,
   .btn {
-
     &:focus,
     &.focus {
       outline: none;
@@ -89,30 +88,52 @@ body {
 nav.volume-control {
   width: 300px;
   height: 300px;
-  background: $bg;
+  background: $vol-ctl-bg;
   border-radius: 50%;
-  padding: 10px;
-  -webkit-transform: rotate(45deg);
-  -moz-transform: rotate(45deg);
+  padding: 1%;
   transform: rotate(45deg);
-  box-shadow: inset -6px 0 6px -3px #ddd, inset 6px 0 6px -3px #fff, inset 0 0 0 6px #eee, inset 1px 0 2px 6px $shadow, 1px 0 4px rgba(0, 0, 0, 0.8);
   box-sizing: border-box;
   position: relative;
+  border: 10px solid $vol-ctl-border-color;
 
   a {
     text-decoration: none;
   }
 
+  .button {
+    border: none;
+    background: $vol-ctl-btn-bg-color;
+    span {
+      transform: rotate(-45deg);
+      position: absolute;
+      font-size: 15px;
+      line-height: 20px;
+      text-align: center;
+      display: block;
+      color: rgba(0, 0, 0, 0.15);
+      text-shadow: 1px 1px 2px #fff, 0px 0px 0px rgba(0, 0, 0, 0.4);
+      // font-weight: 500;
+      // font-family: impact;
+  
+      &.woof,
+      &.mute {
+        width: 50px;
+      }
+  
+      &.vol {
+        width: 40px;
+      }
+    }
+  }
+
   .center-button {
     display: block;
-    height: 38%;
-    width: 38%;
+    height: 40%;
+    width: 40%;
     position: absolute;
-    top: 31%;
-    left: 31%;
-    background: #fff;
+    top: 30%;
+    left: 30%;
     border-radius: 50%;
-    box-shadow: 1px 0 4px rgba(0, 0, 0, 0.8);
 
     span {
       top: 35px;
@@ -120,36 +141,30 @@ nav.volume-control {
     }
   }
 
-  .button {
+  .vol-btn {
     display: block;
     width: 46%;
     height: 46%;
     margin: 2%;
     position: relative;
     float: left;
-    box-shadow: 1px 0px 3px 1px $shadow, inset 0 0 0 1px #fff;
 
     &::after {
       content: "";
       display: block;
       width: 50%;
       height: 50%;
-      background: $bg;
+      background: $vol-ctl-bg;
       position: absolute;
       border-radius: inherit;
     }
 
     &.top {
       border-radius: 100% 0 0 0;
-      background: -webkit-radial-gradient(bottom right, ellipse cover, $button-in 35%, $button-out 75%);
-      background: radial-gradient(bottom right, ellipse cover, $button-in 35%, $button-out 75%);
-
       &::after {
         bottom: 0;
         right: 0;
-        box-shadow: inset 2px 2px 2px 0 $shadow2, 5px 5px 0 5px $bg;
-        -webkit-transform: skew(-3deg, -3deg) scale(0.96);
-        -moz-transform: skew(-3deg, -3deg) scale(0.96);
+        box-shadow: inset 2px 2px 2px 0 $vol-ctl-bg, 5px 5px 0 5px $vol-ctl-bg;
         transform: skew(-3deg, -3deg) scale(0.96);
       }
 
@@ -161,14 +176,10 @@ nav.volume-control {
 
     &.right {
       border-radius: 0 100% 0 0;
-      background: -webkit-radial-gradient(bottom left, ellipse cover, $button-in 35%, $button-out 75%);
-
       &::after {
         bottom: 0;
         left: 0;
-        box-shadow: inset -2px 2px 2px 0 $shadow2, -5px 5px 0 5px $bg;
-        -webkit-transform: skew(3deg, 3deg) scale(0.96);
-        -moz-transform: skew(3deg, 3deg) scale(0.96);
+        box-shadow: inset -2px 2px 2px 0 $vol-ctl-bg, -5px 5px 0 5px $vol-ctl-bg;
         transform: skew(3deg, 3deg) scale(0.96);
       }
 
@@ -180,15 +191,10 @@ nav.volume-control {
 
     &.left {
       border-radius: 0 0 0 100%;
-      background: -webkit-radial-gradient(top right, ellipse cover, $button-in 35%, $button-out 75%);
-      background: radial-gradient(top right, ellipse cover, $button-in 35%, $button-out 75%);
-
       &::after {
         top: 0;
         right: 0;
-        box-shadow: inset 2px -2px 2px 0 $shadow2, 5px -5px 0 5px $bg;
-        -webkit-transform: skew(3deg, 3deg) scale(0.96);
-        -moz-transform: skew(3deg, 3deg) scale(0.96);
+        box-shadow: inset 2px -2px 2px 0 $vol-ctl-bg, 5px -5px 0 5px $vol-ctl-bg;
         transform: skew(3deg, 3deg) scale(0.96);
       }
 
@@ -200,15 +206,10 @@ nav.volume-control {
 
     &.bottom {
       border-radius: 0 0 100% 0;
-      background: -webkit-radial-gradient(top left, ellipse cover, $button-in 35%, $button-out 75%);
-      background: radial-gradient(top left, ellipse cover, $button-in 35%, $button-out 75%);
-
       &::after {
         top: 0;
         left: 0;
-        box-shadow: inset -2px -2px 2px 0 $shadow2, -5px -5px 0 5px $bg;
-        -webkit-transform: skew(-3deg, -3deg) scale(0.96);
-        -moz-transform: skew(-3deg, -3deg) scale(0.96);
+        box-shadow: inset -2px -2px 2px 0 $vol-ctl-bg, -5px -5px 0 5px $vol-ctl-bg;
         transform: skew(-3deg, -3deg) scale(0.96);
       }
 
@@ -219,28 +220,7 @@ nav.volume-control {
     }
   }
 
-  span {
-    -webkit-transform: rotate(-45deg);
-    -moz-transform: rotate(-45deg);
-    transform: rotate(-45deg);
-    position: absolute;
-    font-size: 15px;
-    line-height: 20px;
-    text-align: center;
-    display: block;
-    color: rgba(0, 0, 0, 0.15);
-    text-shadow: 1px 1px 2px #fff, 0px 0px 0px rgba(0, 0, 0, 0.4);
-    font-family: impact;
 
-    &.woof,
-    &.mute {
-      width: 50px;
-    }
-
-    &.vol {
-      width: 40px;
-    }
-  }
 }
 
 

@@ -13,15 +13,15 @@ block content
 
         .d-flex.justify-content-center
           nav.volume-control
-            button(href="/api/v1/remote/WOOF+" type="button").button.top.cmd-link.cmd-repeater
+            button(href="/api/v1/remote/WOOF+" type="button").button.vol-btn.top.cmd-link.cmd-repeater
               span.woof #[i.fas.fa-plus.fa-2x] WOOF
-            button(href="/api/v1/remote/VOL+" type="button").button.right.cmd-link.cmd-repeater
+            button(href="/api/v1/remote/VOL+" type="button").button.vol-btn.right.cmd-link.cmd-repeater
               span.vol #[i.fas.fa-plus.fa-2x] VOL
-            button(href="/api/v1/remote/VOL-" type="button").button.left.cmd-link.cmd-repeater
+            button(href="/api/v1/remote/VOL-" type="button").button.vol-btn.left.cmd-link.cmd-repeater
               span.vol #[i.fas.fa-minus.fa-2x] VOL
-            button(href="/api/v1/remote/WOOF-" type="button").button.bottom.cmd-link.cmd-repeater
+            button(href="/api/v1/remote/WOOF-" type="button").button.vol-btn.bottom.cmd-link.cmd-repeater
               span.woof #[i.fas.fa-minus.fa-2x] WOOF
-            button(href="/api/v1/remote/MUTE" type="button").center-button.cmd-link.cmd-repeater
+            button(href="/api/v1/remote/MUTE" type="button").button.center-button.cmd-link.cmd-once
               span.mute #[i.fas.fa-volume-mute.fa-3x]
 
         .d-flex.justify-content-between.pt-2.pb-2
