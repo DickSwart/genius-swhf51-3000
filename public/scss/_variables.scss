@@ -1,19 +1,26 @@
 // Bootstrap
 $primary-color: #4ab52f;
 $secondary-color: #CE3648;
-// $tertiary-color: #D77838;
 $tertiary-color: complement($primary-color);
-$background-color: #222222;
-$dark-primary-color: #1c7804;
-$light-primary-color: #91e07c;
+$black: #222222;
 
-$shadow: rgba(0, 0, 0, 0.4);
-$shadow2: rgba(56, 56, 56, 0.4);
-$button-in: #fff;
-$button-out: #eee;
+// Swagger UI
+$swager-ui-topbar-color: #292929;
+
+// $shadow: rgba(0, 0, 0, 0.4);
+// $shadow2: rgba(56, 56, 56, 0.4);
+// $button-in: #fff;
+// $button-out: #eee;
+// $footer-bg-color: #292929;
+// $remote-control-bg: #292929;
+// $button-bg-color: #fff;
+
+
+$body-bg-color: #292929;
+// Remote Control
+$remote-ctl-bg: #292929;
+$remote-ctl-bg: #292929;
 $footer-bg-color: #292929;
-$remote-control-bg: #292929;
-$button-bg-color: #fff;
 
 // Volume Control
 $vol-ctl-bg: $primary-color;

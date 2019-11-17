@@ -1,5 +1,5 @@
-header.site-header.d-none.d-sm-block
-    nav.navbar.sticky-top.navbar-dark
+header(role="navigation").site-header
+    nav.navbar
         a(href="/").navbar-brand
-            img(src="/images/SwartNinjaLogoV2.svg" height="50" class="d-inline-block" alt="")
-            span.ml-4 #{navBarTitle}
+            img(src="/images/SwartNinjaLogoV2.svg" height="50" alt="").brand-logo
+            h2.brand-name #{navBarTitle}

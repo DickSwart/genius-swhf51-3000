@@ -1,60 +1,87 @@
 extends structure/_layout
 
 block content
-  .row.d-none.d-sm-block
-    .col
-      h1.mt-5= title
+  .remote-control
+    .flex-justify-content-end
+      button(href="/api/v1/remote/POWER" type="button").cmd-link.cmd-once.btn.power-btn.btn-circle #[i.fas.fa-power-off.fa-2x]
 
-  .row.justify-content-lg-center
-    .col-sm-5
-      .remote-control
-        .d-flex.justify-content-end
-          button(href="/api/v1/remote/POWER" type="button").cmd-link.cmd-once.btn.power-btn.btn-circle.m-1 #[i.fas.fa-power-off.fa-2x]
+    .volume-control
+      nav.wrap
+        button(href="/api/v1/remote/WOOF+" type="button").button.vol-btn.top.cmd-link.cmd-repeater
+          div
+            i.fas.fa-plus.fa-2x
+            span WOOF
+        button(href="/api/v1/remote/VOL+" type="button").button.vol-btn.right.cmd-link.cmd-repeater
+          div
+            i.fas.fa-plus.fa-2x
+            span VOL
+        button(href="/api/v1/remote/VOL-" type="button").button.vol-btn.left.cmd-link.cmd-repeater
+          div
+            i.fas.fa-minus.fa-2x
+            span VOL
+        button(href="/api/v1/remote/WOOF-" type="button").button.vol-btn.bottom.cmd-link.cmd-repeater
+          div
+            i.fas.fa-minus.fa-2x
+            span WOOF
+        button(href="/api/v1/remote/MUTE" type="button").button.center-button.cmd-link.cmd-once
+          div
+            i.fas.fa-volume-mute.fa-2x
+            span MUTE
 
-        .d-flex.justify-content-center
-          nav.volume-control
-            button(href="/api/v1/remote/WOOF+" type="button").button.vol-btn.top.cmd-link.cmd-repeater
-              span.woof #[i.fas.fa-plus.fa-2x] WOOF
-            button(href="/api/v1/remote/VOL+" type="button").button.vol-btn.right.cmd-link.cmd-repeater
-              span.vol #[i.fas.fa-plus.fa-2x] VOL
-            button(href="/api/v1/remote/VOL-" type="button").button.vol-btn.left.cmd-link.cmd-repeater
-              span.vol #[i.fas.fa-minus.fa-2x] VOL
-            button(href="/api/v1/remote/WOOF-" type="button").button.vol-btn.bottom.cmd-link.cmd-repeater
-              span.woof #[i.fas.fa-minus.fa-2x] WOOF
-            button(href="/api/v1/remote/MUTE" type="button").button.center-button.cmd-link.cmd-once
-              span.mute #[i.fas.fa-volume-mute.fa-3x]
+  //- .row.d-none.d-sm-block
+  //-   .col
+  //-     h1.mt-5= title
 
-        .d-flex.justify-content-between.pt-2.pb-2
-          .p-2
-            button(href="/api/v1/remote/5.1" type="button").cmd-link.cmd-once.btn.source-btn.btn-lg 5.1
-          .p-2
-            button(href="/api/v1/remote/AUX" type="button").cmd-link.cmd-once.btn.source-btn.btn-lg AUX
+  //- .row.justify-content-lg-center
+  //-   .col-sm-5
+  //-     .remote-control
+  //-       .d-flex.justify-content-end
+  //-         button(href="/api/v1/remote/POWER" type="button").cmd-link.cmd-once.btn.power-btn.btn-circle.m-1 #[i.fas.fa-power-off.fa-2x]
 
-        hr.mt-3
+  //-       .d-flex.justify-content-center
+  //-         nav.volume-control
+  //-           button(href="/api/v1/remote/WOOF+" type="button").button.vol-btn.top.cmd-link.cmd-repeater
+  //-             span.woof #[i.fas.fa-plus.fa-2x] WOOF
+  //-           button(href="/api/v1/remote/VOL+" type="button").button.vol-btn.right.cmd-link.cmd-repeater
+  //-             span.vol #[i.fas.fa-plus.fa-2x] VOL
+  //-           button(href="/api/v1/remote/VOL-" type="button").button.vol-btn.left.cmd-link.cmd-repeater
+  //-             span.vol #[i.fas.fa-minus.fa-2x] VOL
+  //-           button(href="/api/v1/remote/WOOF-" type="button").button.vol-btn.bottom.cmd-link.cmd-repeater
+  //-             span.woof #[i.fas.fa-minus.fa-2x] WOOF
+  //-           button(href="/api/v1/remote/MUTE" type="button").button.center-button.cmd-link.cmd-once
+  //-             span.mute #[i.fas.fa-volume-mute.fa-3x]
 
-        .row.justify-content-center.pt-4.pb-4
-          .col.text-center
-            div(role="group").btn-group-vertical.settings-btn-group
-              button(href="/api/v1/remote/SURR+" type="button").cmd-link.cmd-repeater.btn.settings-btn #[i.fas.fa-plus.fa-2x]
-              .setting-name SURROUND
-              button(href="/api/v1/remote/SURR-" type="button").cmd-link.cmd-repeater.btn.settings-btn #[i.fas.fa-minus.fa-2x]
-          .col.text-center
-            div(role="group").btn-group-vertical.settings-btn-group
-              button(href="/api/v1/remote/CEN+" type="button").cmd-link.cmd-repeater.btn.settings-btn #[i.fas.fa-plus.fa-2x]
-              .setting-name CENTER
-              button(href="/api/v1/remote/CEN-" type="button").cmd-link.cmd-repeater.btn.settings-btn #[i.fas.fa-minus.fa-2x]
-          .col.text-center
-            div(role="group").btn-group-vertical.settings-btn-group
-              button(href="/api/v1/remote/FRONT+" type="button").cmd-link.cmd-repeater.btn.settings-btn #[i.fas.fa-plus.fa-2x]
-              .setting-name FRONT
-              button(href="/api/v1/remote/FRONT-" type="button").cmd-link.cmd-repeater.btn.settings-btn #[i.fas.fa-minus.fa-2x]
+  //-       .d-flex.justify-content-between.pt-2.pb-2
+  //-         .p-2
+  //-           button(href="/api/v1/remote/5.1" type="button").cmd-link.cmd-once.btn.source-btn.btn-lg 5.1
+  //-         .p-2
+  //-           button(href="/api/v1/remote/AUX" type="button").cmd-link.cmd-once.btn.source-btn.btn-lg AUX
 
-        hr.mt-3
+  //-       hr.mt-3
 
-        .row.pt-3
-          .col
-            .p-2
-              button(href="/api/v1/remote/RESET" type="button").cmd-link.cmd-once.btn.btn-secondary.function-btn.btn-lg.btn-block RESET
-          .col
-            .p-2
-              button(href="/api/v1/refresh" type="button").cmd-link.cmd-once.btn.btn-secondary.function-btn.btn-lg.btn-block REFRESH
+  //-       .row.justify-content-center.pt-4.pb-4
+  //-         .col.text-center
+  //-           div(role="group").btn-group-vertical.settings-btn-group
+  //-             button(href="/api/v1/remote/SURR+" type="button").cmd-link.cmd-repeater.btn.settings-btn #[i.fas.fa-plus.fa-2x]
+  //-             .setting-name SURROUND
+  //-             button(href="/api/v1/remote/SURR-" type="button").cmd-link.cmd-repeater.btn.settings-btn #[i.fas.fa-minus.fa-2x]
+  //-         .col.text-center
+  //-           div(role="group").btn-group-vertical.settings-btn-group
+  //-             button(href="/api/v1/remote/CEN+" type="button").cmd-link.cmd-repeater.btn.settings-btn #[i.fas.fa-plus.fa-2x]
+  //-             .setting-name CENTER
+  //-             button(href="/api/v1/remote/CEN-" type="button").cmd-link.cmd-repeater.btn.settings-btn #[i.fas.fa-minus.fa-2x]
+  //-         .col.text-center
+  //-           div(role="group").btn-group-vertical.settings-btn-group
+  //-             button(href="/api/v1/remote/FRONT+" type="button").cmd-link.cmd-repeater.btn.settings-btn #[i.fas.fa-plus.fa-2x]
+  //-             .setting-name FRONT
+  //-             button(href="/api/v1/remote/FRONT-" type="button").cmd-link.cmd-repeater.btn.settings-btn #[i.fas.fa-minus.fa-2x]
+
+  //-       hr.mt-3
+
+  //-       .row.pt-3
+  //-         .col
+  //-           .p-2
+  //-             button(href="/api/v1/remote/RESET" type="button").cmd-link.cmd-once.btn.btn-secondary.function-btn.btn-lg.btn-block RESET
+  //-         .col
+  //-           .p-2
+  //-             button(href="/api/v1/refresh" type="button").cmd-link.cmd-once.btn.btn-secondary.function-btn.btn-lg.btn-block REFRESH

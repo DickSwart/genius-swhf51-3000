@@ -1,240 +1,203 @@
-@import "_variables";
+@import "_vendors";
 
-// Custom Styles
+html,
 body {
-  background-color: $remote-control-bg;
-  color: #fff;
+  min-height: 100vh;
 }
 
-.footer {
-  background-color: $footer-bg-color;
+// General
+.btn {
+  display: block;
+  padding: 0.6rem 1rem;
+  border-radius: 4px;
+}
+
+.btn-circle {
+  border-radius: 50%;
+  height: 70px;
+  width: 70px;
+}
+
+.btn,
+.btn-circle{
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  &:focus {
+    border: none;
+  }
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+.flex-justify-content-end {
+  display: flex;
+  justify-content: flex-end;
+}
+
+//////////////////
+body {
+  display: flex;
+  flex-direction: column;
+  background-color: #222222;
 }
 
 .site-header {
-  nav.navbar {
-    background-color: $primary-color;
+  background-color: $primary-color;
 
-    .navbar-brand {
+  a {
+    color: #222;
+
+    &:hover {
+      text-decoration: none;
+    }
+  }
+
+  .navbar {
+    padding: 1rem;
+
+    .brand-logo {
+      margin-right: 1rem;
+    }
+
+    .brand-name {
+      display: inline-block;
+      font-weight: 700;
       font-size: 2rem;
       font-weight: 600;
     }
   }
 }
 
-.remote-control {
-  button {
-    color: #fff;
-  }
+.main-content {
+  flex: 1 0 auto;
+}
 
-  button,
-  .btn {
-    &:focus,
-    &.focus {
-      outline: none;
-      box-shadow: none;
+.site-footer {
+  padding: 0.5rem;
+  background: $footer-bg-color;
+  color: #fff;
+  flex-shrink: 0;
+  font-size: 0.8rem;
+
+  .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin: 0 auto;
+    max-width: 1000px;
+    a {
+      color: $primary-color;
+      &:hover {
+        color: lighten($primary-color,10%);
+      }
     }
-  }
-
-  hr {
-    border-color: $light-primary-color;
-  }
-
-  background-color: #292929;
-
-  .btn-circle {
-    text-align: center;
-    padding: 0;
-    border-radius: 50%;
-    width: 70px;
-    height: 70px;
-    font-size: 1.3rem;
-  }
-
-  .power-btn {
-    background: $secondary-color;
-  }
-
-  .source-btn {
-    width: 100px !important;
-    background: $tertiary-color;
-  }
-
-  .settings-btn-group {
-    .settings-btn {
+    .btn {
+      border: 1px solid rgba(darken($primary-color,10%),0.4);
       background: $primary-color;
-      height: 70px;
-      width: 80px;
-      color: rgba(0, 0, 0, 0.15);
-      text-shadow: 1px 1px 2px #fff, 0px 0px 0px rgba(0, 0, 0, 0.4);
-
-      &:first-of-type {
-        border-radius: 50% 50% 0 0;
-      }
-
-      &:last-of-type {
-        border-radius: 0 0 50% 50%;
-      }
-    }
-
-    .setting-name {
-      text-align: center;
-      font-size: 0.8rem;
-      line-height: 3em;
-      width: 100%;
+      color: #fff;
     }
   }
 }
 
-nav.volume-control {
-  width: 300px;
-  height: 300px;
-  background: $vol-ctl-bg;
-  border-radius: 50%;
-  padding: 1%;
-  transform: rotate(45deg);
-  box-sizing: border-box;
-  position: relative;
-  border: 10px solid $vol-ctl-border-color;
 
-  a {
-    text-decoration: none;
-  }
 
-  .button {
-    border: none;
-    background: $vol-ctl-btn-bg-color;
-    span {
-      transform: rotate(-45deg);
-      position: absolute;
-      font-size: 15px;
-      line-height: 20px;
-      text-align: center;
-      display: block;
-      color: rgba(0, 0, 0, 0.15);
-      text-shadow: 1px 1px 2px #fff, 0px 0px 0px rgba(0, 0, 0, 0.4);
-      // font-weight: 500;
-      // font-family: impact;
-  
-      &.woof,
-      &.mute {
-        width: 50px;
-      }
-  
-      &.vol {
-        width: 40px;
-      }
-    }
-  }
+// Remote Control
+$remote-ctl-bg: #292929;
+$volume-ctl-bg: $primary-color;
+$volume-ctl-wrap-bg: $volume-ctl-bg;
+$volume-ctl-btn-bg-color: #fff;
+$volume-ctl-mute-btn-size: 39%;
 
-  .center-button {
-    display: block;
-    height: 40%;
-    width: 40%;
-    position: absolute;
-    top: 30%;
-    left: 30%;
-    border-radius: 50%;
+.remote-control {
+  width: 400px;
+  margin: 0 auto;
+  padding: 1rem;
+  background: $remote-ctl-bg;
+}
 
-    span {
-      top: 35px;
-      left: 35px;
-    }
-  }
+// Volume Control SCSS
+.volume-control {
+  background: inherit;
+  overflow: hidden;
 
-  .vol-btn {
-    display: block;
-    width: 46%;
-    height: 46%;
-    margin: 2%;
+  .wrap {
     position: relative;
-    float: left;
+    transform: rotate(45deg);
+    width: 320px;
+    height: 320px;
+    margin: 0 auto;
+    background: $volume-ctl-wrap-bg;
+    overflow: hidden;
+    border-radius: 50%;
+    border: 8px solid $volume-ctl-btn-bg-color;
 
-    &::after {
-      content: "";
-      display: block;
-      width: 50%;
-      height: 50%;
-      background: $vol-ctl-bg;
+    button {
       position: absolute;
-      border-radius: inherit;
+      left: 3%;
+      top: 3%;
+      width: 45%;
+      height: 45%;
+      overflow: hidden;
+      background: $volume-ctl-btn-bg-color;
+      border: none;
+
+      &:focus {
+        border: none;
+      }
+
+      &:hover {
+        background: darken($volume-ctl-btn-bg-color, 5%);
+      }
+
+      div {
+        transform: rotate(-45deg);
+        background-size: cover;
+        width: 50px;
+        font-size: 1rem;
+        margin: 0 auto;
+
+        i {
+          // color: rgba(0, 0, 0, 0.15);
+          color: rgba($volume-ctl-bg, 0.4);
+          text-shadow: 1px 1px 2px #fff, 0px 0px 0px rgba(0, 0, 0, 0.4);
+        }
+
+        span {
+          font-size: 0.8rem;
+        }
+      }
+
+      &:nth-child(1) {
+        border-radius: 40vmin 0 0 0;
+      }
+
+      &:nth-child(2) {
+        border-radius: 0 40vmin 0 0;
+        left: 51.5%;
+      }
+
+      &:nth-child(3) {
+        border-radius: 0 0 0 40vmin;
+        top: 51.5%;
+      }
+
+      &:nth-child(4) {
+        border-radius: 0 0 40vmin 0;
+        top: 51.5%;
+        left: 51.5%;
+      }
+
+      &:nth-child(5) {
+        width: $volume-ctl-mute-btn-size;
+        height: $volume-ctl-mute-btn-size;
+        left: 50%;
+        top: 50%;
+        margin-left: ($volume-ctl-mute-btn-size/2)*-1;
+        margin-top: ($volume-ctl-mute-btn-size/2)*-1;
+        border-radius: 50vmin;
+        box-shadow: 0 0 0 1.7vmin $volume-ctl-wrap-bg;
+      }
     }
-
-    &.top {
-      border-radius: 100% 0 0 0;
-      &::after {
-        bottom: 0;
-        right: 0;
-        box-shadow: inset 2px 2px 2px 0 $vol-ctl-bg, 5px 5px 0 5px $vol-ctl-bg;
-        transform: skew(-3deg, -3deg) scale(0.96);
-      }
-
-      span {
-        top: 35px;
-        left: 35px;
-      }
-    }
-
-    &.right {
-      border-radius: 0 100% 0 0;
-      &::after {
-        bottom: 0;
-        left: 0;
-        box-shadow: inset -2px 2px 2px 0 $vol-ctl-bg, -5px 5px 0 5px $vol-ctl-bg;
-        transform: skew(3deg, 3deg) scale(0.96);
-      }
-
-      span {
-        top: 40px;
-        left: 50px;
-      }
-    }
-
-    &.left {
-      border-radius: 0 0 0 100%;
-      &::after {
-        top: 0;
-        right: 0;
-        box-shadow: inset 2px -2px 2px 0 $vol-ctl-bg, 5px -5px 0 5px $vol-ctl-bg;
-        transform: skew(3deg, 3deg) scale(0.96);
-      }
-
-      span {
-        top: 45px;
-        left: 45px;
-      }
-    }
-
-    &.bottom {
-      border-radius: 0 0 100% 0;
-      &::after {
-        top: 0;
-        left: 0;
-        box-shadow: inset -2px -2px 2px 0 $vol-ctl-bg, -5px -5px 0 5px $vol-ctl-bg;
-        transform: skew(-3deg, -3deg) scale(0.96);
-      }
-
-      span {
-        top: 40px;
-        left: 40px;
-      }
-    }
-  }
-
-
-}
-
-
-/* Medium devices (tablets, 768px and up) The navbar toggle appears at this breakpoint */
-
-@media (min-width: 768px) {
-  body {
-    background-color: $background-color;
-  }
-
-  .remote-control {
-    border-radius: .25rem !important;
-    padding: 1rem !important;
-    border: 1px solid rgba(0, 0, 0, 0.3) !important;
-    margin-bottom: 3rem;
   }
 }

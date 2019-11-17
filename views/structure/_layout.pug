@@ -17,24 +17,20 @@ html(lang="en").h-100
       meta(name="msapplication-TileColor" content="#4ab52f")
       meta(name="theme-color" content="#4ab52f")
 
-
       block styles
-        link(rel="stylesheet" href="/css/bootstrap.min.css")
         link(rel="stylesheet" href="/css/fontawesome.min.css")
         link(rel='stylesheet' href='/css/main.min.css')
 
-  body.d-flex.flex-column.h-100
+  body
     include _header.pug
 
-    main.flex-shrink-0(role="main")
-      .container
-        block content
-
+    main(role="main").main-content
+      block content
+    
     include _footer.pug
 
   block scripts
     script(src="/js/jquery.min.js")
-    script(src="/js/bootstrap.min.js")
     script(src="/js/zepto.min.js")
     script(src="/js/zepto.touch.js")
     script(src="/js/fastclick.js")
