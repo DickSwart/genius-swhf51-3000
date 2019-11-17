@@ -5,6 +5,9 @@
 ``genius-swhf51-3000`` is a [NodeJS](http://nodejs.org) app that creates a web interface & RESTful API for the [LIRC](http://lirc.org) project. It uses [lirc_node](https://github.com/alexbain/lirc_node) to handle communication between [LIRC](http://lirc.org) and [NodeJS](http://nodejs.org).
 This project allows you to control the [Genius SW-HF5.1 3000 speaker system](https://github.com/DickSwart/genius-swhf51-3000/wiki/Genius-SW-HF5.1-3000-SPECS) from any web browser. The RESTful API allows you to integrate the remote control functionality into home automation hubs like [Home Assistant](https://www.home-assistant.io).
 
+## Background
+I installed an old Genius SW-HF5.1 3000 speaker system in my _"Man Cave"_. Thought it would be nice to have a bit better sound when playing Xbox or watching a movie. It ended up never being used because I lost the remote (yes I'm lazy, lol). I had a Raspberry Pi laying around so I decided to install [Volumio](https://volumio.org/) and turn my old Genius SW-HF5.1 3000 into a "Smart" speaker, allowing integration into [Home Assistant](https://www.home-assistant.io) and a stand-alone remote control UI for guests.
+
 ## Install
 Clone the application and install dependancies.
 ```bash
