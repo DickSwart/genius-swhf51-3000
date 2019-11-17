@@ -19,10 +19,18 @@ $swager-ui-topbar-color: #292929;
 $body-bg-color: #292929;
 // Remote Control
 $remote-ctl-bg: #292929;
-$remote-ctl-bg: #292929;
 $footer-bg-color: #292929;
 
-// Volume Control
+// power button
+$power-btn-bg: $secondary-color;
+
+// volume control
 $vol-ctl-bg: $primary-color;
 $vol-ctl-border-color: #fff;
 $vol-ctl-btn-bg-color: #fff;
+
+// source button
+$source-btn-bg: $tertiary-color;
+
+// settings button
+$settings-btn-bg: $primary-color;
