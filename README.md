@@ -2,9 +2,9 @@
 [![](https://img.shields.io/badge/author-@dnswart-blue.svg?style=flat-square)](https://twitter.com/dnswart)
 ![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/dickswart/genius-swhf51-3000?style=flat-square)
 
-``genius-swhf51-3000`` is a [nodejs](http://nodejs.org) app that creates a web interface & RESTful API for the [LIRC](http://lirc.org) project. It uses [lirc_node](https://github.com/alexbain/lirc_node) to handle communication between LIRC and nodejs.
 
-This project allows you to control the Genius SW-HF5.1 3000 speaker system from any web browser. The RESTful API allows you to integrate the remote controll functionallity into home automation hubs like [Home Assistant](https://www.home-assistant.io).
+``genius-swhf51-3000`` is a [NodeJS](http://nodejs.org) app that creates a web interface & RESTful API for the [LIRC](http://lirc.org) project. It uses [lirc_node](https://github.com/alexbain/lirc_node) to handle communication between [LIRC](http://lirc.org) and [NodeJS](http://nodejs.org).
+This project allows you to control the Genius SW-HF5.1 3000 speaker system from any web browser. The RESTful API allows you to integrate the remote control functionality into home automation hubs like [Home Assistant](https://www.home-assistant.io).
 
 ## Install
 Clone the application and install dependancies.
