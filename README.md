@@ -1,4 +1,8 @@
 # Genius SW-HF5.1 3000 - Remote Control
+<p align="center">
+    <img src="/public/images/SwartNinjaLogoV2.svg" alt="SwartNinja logo" height="150">
+</p>
+
 [![](https://img.shields.io/badge/author-@dnswart-blue.svg?style=flat-square)](https://twitter.com/dnswart)
 ![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/dickswart/genius-swhf51-3000?style=flat-square)
 
@@ -8,27 +12,26 @@ This project allows you to control the [Genius SW-HF5.1 3000 speaker system](htt
 ## Background
 I installed an old Genius SW-HF5.1 3000 speaker system in my _"Man Cave"_. Thought it would be nice to have a bit better sound when playing Xbox or watching a movie. It ended up never being used because I lost the remote (yes I'm lazy, lol). I had a Raspberry Pi laying around so I decided to install [Volumio](https://volumio.org/) and turn my old Genius SW-HF5.1 3000 into a "Smart" speaker, allowing integration into [Home Assistant](https://www.home-assistant.io) and a stand-alone remote control UI for guests.
 
+## Table of Contents
+- [Screenshots](#screenshots)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Credits](#credits)
+- [License](#license)
+
 ## Screenshots
-### Desktop Remote
 <p align="center">
-  <img width="460" src="/extras/images/screenshot-web-ui-remote-desktop.png">
+  <img width="460" src="/extras/images/screenshots.jpg">
 </p>
 
-### Desktop Swagger
-<p align="center">
-  <img width="460" src="/extras/images/screenshot-web-ui-swagger-desktop.png">
-</p>
-
----
-
-## Install
+## Installation
 Clone the application and install dependancies.
 ```bash
 $ git clone git@github.com:DickSwart/genius-swhf51-3000.git
 $ cd genius-swhf51-3000
 $ npm install
 ```
-
+## Usage
 Run the application.
 ```bash
 # Run application production
@@ -37,11 +40,11 @@ $ npm start
 # Run application development
 $ npm run start-dev
 ```
-
-## Helpful resources
-- [Linux Infrared Remote Control (LIRC)](http://lirc.org/)
+## Credits
+- [lirc_web](https://github.com/DickSwart/lirc_web)
 - [lirc_node](https://github.com/alexbain/lirc_node)
 - [Open Source Universal Remote](http://opensourceuniversalremote.com/)
+- [Linux Infrared Remote Control (LIRC)](http://lirc.org/)
 
 ## License
 MIT License
