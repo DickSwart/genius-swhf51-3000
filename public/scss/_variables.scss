@@ -1,22 +1,14 @@
-// Bootstrap
+// colors
 $primary-color: #4ab52f;
 $secondary-color: #CE3648;
 $tertiary-color: complement($primary-color);
 $black: #222222;
 
-// Swagger UI
+$body-bg-color: #292929;
+
+// swagger ui
 $swager-ui-topbar-color: #292929;
 
-// $shadow: rgba(0, 0, 0, 0.4);
-// $shadow2: rgba(56, 56, 56, 0.4);
-// $button-in: #fff;
-// $button-out: #eee;
-// $footer-bg-color: #292929;
-// $remote-control-bg: #292929;
-// $button-bg-color: #fff;
-
-
-$body-bg-color: #292929;
 // Remote Control
 $remote-ctl-bg: #292929;
 $footer-bg-color: #292929;
@@ -28,6 +20,8 @@ $power-btn-bg: $secondary-color;
 $vol-ctl-bg: $primary-color;
 $vol-ctl-border-color: #fff;
 $vol-ctl-btn-bg-color: #fff;
+$vol-ctl-mute-btn-size: 39%;
+$vol-ctl-wrap-bg: $vol-ctl-bg;
 
 // source button
 $source-btn-bg: $tertiary-color;
