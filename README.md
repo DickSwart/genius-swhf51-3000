@@ -10,9 +10,16 @@ I installed an old Genius SW-HF5.1 3000 speaker system in my _"Man Cave"_. Thoug
 
 ## Screenshots
 ### Desktop Remote
-![Desktop screenshot](/extras/images/screenshot-web-ui-remote-desktop.png)
+<p align="center">
+  <img width="460" src="/extras/images/screenshot-web-ui-remote-desktop.png">
+</p>
+
 ### Desktop Swagger
-![Desktop screenshot](/extras/images/screenshot-web-ui-swagger-desktop.png)
+<p align="center">
+  <img width="460" src="/extras/images/screenshot-web-ui-swagger-desktop.png">
+</p>
+
+---
 
 ## Install
 Clone the application and install dependancies.
