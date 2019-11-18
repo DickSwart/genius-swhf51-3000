@@ -42,7 +42,7 @@ $ npm start
 $ npm run start-dev
 ```
 ## Credits
-- [lirc_web](https://github.com/DickSwart/lirc_web)
+- [lirc_web](https://github.com/alexbain/lirc_web)
 - [lirc_node](https://github.com/alexbain/lirc_node)
 - [Open Source Universal Remote](http://opensourceuniversalremote.com/)
 - [Linux Infrared Remote Control (LIRC)](http://lirc.org/)
