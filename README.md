@@ -8,6 +8,12 @@ This project allows you to control the [Genius SW-HF5.1 3000 speaker system](htt
 ## Background
 I installed an old Genius SW-HF5.1 3000 speaker system in my _"Man Cave"_. Thought it would be nice to have a bit better sound when playing Xbox or watching a movie. It ended up never being used because I lost the remote (yes I'm lazy, lol). I had a Raspberry Pi laying around so I decided to install [Volumio](https://volumio.org/) and turn my old Genius SW-HF5.1 3000 into a "Smart" speaker, allowing integration into [Home Assistant](https://www.home-assistant.io) and a stand-alone remote control UI for guests.
 
+## Screenshots
+### Desktop Remote
+![Desktop screenshot](/extras/images/screenshot-web-ui-remote-desktop.png)
+### Desktop Swagger
+![Desktop screenshot](/extras/images/screenshot-web-ui-swagger-desktop.png)
+
 ## Install
 Clone the application and install dependancies.
 ```bash
