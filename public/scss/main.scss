@@ -33,6 +33,7 @@ a {
 
   @include hover-focus-active {
     @include add-border(#000);
+    outline: none;
   }
 }
 
