@@ -21,7 +21,7 @@ I installed an old Genius SW-HF5.1 3000 speaker system in my _"Man Cave"_. Thoug
 
 ## Screenshots
 <p align="center">
-  <img width="460" src="/extras/images/screenshots.jpg">
+  <img src="/extras/images/screenshots.jpg">
 </p>
 
 ## Installation
