@@ -23,6 +23,7 @@ a {
   @include hover-focus-active {
     border: none;
     text-decoration: none;
+    outline: none;
   }
 }
 
@@ -69,6 +70,7 @@ body {
 
     &:hover {
       text-decoration: none;
+      outline: none;
     }
   }
 
@@ -163,10 +165,12 @@ body {
 
       &:focus {
         border: none;
+        outline: none;
       }
 
       &:hover {
         background: darken($vol-ctl-btn-bg-color, 5%);
+        outline: none;
       }
 
       div {
