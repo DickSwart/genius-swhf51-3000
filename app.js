@@ -43,8 +43,8 @@ app.use('/api/v1', apiRouter);
 
 var swaggerOpt = {
   customfavIcon: '/images/favicon.ico',
-  customCssUrl: '/css/swaggerUi.css',
-  customJs: '/js/swaggerUi.js'
+  customCssUrl: '/css/swagger-ui.min.css',
+  customJs: '/js/swagger-ui.js'
 }
 app.use('/api/docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument, swaggerOpt));
 

@@ -1,0 +1,32 @@
+@import "variables";
+
+.swagger-ui {
+  .topbar {
+    background-color: $swager-ui-topbar-color;
+    a.btn {
+      background: $primary-color;
+      border-radius: 4px;
+      border: 1px solid rgba(darken($primary-color, 10%), 0.4);
+      display: block;
+      padding: 0.6rem 1rem;
+      font-size: 1em;
+      font-weight: normal;
+  
+      &:hover {
+        background: darken($primary-color,5%);
+      }
+      &:hover,
+      &:focus,
+      &:active {
+        border: 1px solid rgba(darken($primary-color, 10%), 0.4);
+        text-decoration: none;
+      }
+    }
+  }
+
+  .info {
+    margin: 20px 0;
+  }
+
+
+}
