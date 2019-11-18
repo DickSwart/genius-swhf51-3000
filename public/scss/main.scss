@@ -232,9 +232,10 @@ body {
 .settings-btn-container {
   margin: 2em 0;
   padding: 2em 0;
-  border-top: 2px solid rgba(#fff,0.5);
-  border-bottom: 2px solid rgba(#fff,0.5);
+  border-top: 2px solid rgba(#fff, 0.5);
+  border-bottom: 2px solid rgba(#fff, 0.5);
 }
+
 .settings-btn-group {
   .setting-name {
     text-align: center;
@@ -249,8 +250,8 @@ body {
     border-color: rgba($settings-btn-bg, 0.3);
     height: 70px;
     width: 80px;
-    
-    i{
+
+    i {
       color: rgba($settings-btn-bg, 0.2);
       text-shadow: 1px 1px 2px #fff, 0px 0px 0px rgba(0, 0, 0, 0.4);
     }
@@ -273,13 +274,45 @@ body {
   color: dark-or-light-color($source-btn-bg);
 }
 
+.error-page {
+  max-width: 1000px;
+  margin: 0 auto;
+
+  .title-block {
+    color: cornsilk;
+    margin: 10px auto 50px;
+    width: 300px;
+    text-align: center;
+    .error-code {
+      color: rgba($body-bg-color, 0.2);
+      text-shadow: 2px 2px 0px #fff, 0px 0px 0px rgba(0, 0, 0, 1);
+      font-size: 120px;
+      line-height: 1;
+    }
+    .error-msg {
+      border-top: 1px solid #fff;
+      border-bottom: 1px solid #fff;
+      padding: 10px 0;
+      font-size: 2rem;
+      line-height: 2rem;
+    }
+  }
+  .stack-trace-box {
+    padding: 10px;
+    background: #fff;
+    border-radius: 4px;
+  }
+}
+
 @media all and (max-width:500px) {
+
   .site-header,
   .site-footer {
     display: none !important;
   }
+
   .remote-control {
-  margin: 0;
+    margin: 0;
   }
-  
+
 }

@@ -1,14 +1,13 @@
 extends structure/_layout
 
 block content
-  .d-flex.justify-content-center.align-items-center.mt-5.mb-5
-    h1.display-1.mr-3.pr-3.align-top.border-right.inline-block.align-content-center #{error.status}
-    .inline-block.align-middle
-      h2.font-weight-normal.display-2 #{message}
+  .error-page
+    .title-block
+      h2.error-code #{error.status}
+      div.error-msg #{message}
 
-  if isDev
-    .row
-      .col
-        div(role="alert").alert.alert-light
+    if isDev
+      .stack-trace-box
+        div(role="alert")
           pre
             code #{error.stack}
