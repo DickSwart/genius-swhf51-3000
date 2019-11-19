@@ -47,6 +47,41 @@ $ npm run start-dev
 
 Accessing the remote web-ui, open a browser and navigate to ``http://SERVER:8080/``, to access the Swagger (api documentation) navigate to ``http://SERVER:8080/api/docs``.
 
+### Home Assistant
+
+<p align="center">
+  <img src="/extras/images/screenshot-hass-ui-lovelace.png">
+</p>
+
+Add a rest command to the configuration.yaml and then in lovelace use ["Button Card"](https://github.com/custom-cards/button-card#manual-installation) for the buttons.
+
+Full examples can be found in the extras folder of this repo.
+- [rest_command.yaml](/extras/hass/rest_command.yaml)
+- [ui-lovelace.yaml](/extras/hass/ui-lovelace.yaml)
+
+```yaml
+# file: /extras/hass/rest_command.yaml
+rest_command:
+  genius_swhf51_3000_command:
+    url: http://xxx.xxx.xxx.xxx:8080/api/v1/remote/{{command}}
+    method: POST
+```
+
+```yaml
+# file: /extras/hass/ui-lovelace.yaml
+type: "custom:button-card"
+name: "Power"
+icon: mdi:power
+show_icon: true
+show_name: false
+tap_action:
+  action: call-service
+  service: rest_command.genius_swhf51_3000_command
+  service_data:
+    command: POWER
+```
+
+
 ## Credits
 - [lirc_web](https://github.com/alexbain/lirc_web)
 - [lirc_node](https://github.com/alexbain/lirc_node)
