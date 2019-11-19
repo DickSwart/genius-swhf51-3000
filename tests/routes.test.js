@@ -10,6 +10,12 @@ describe('genius-swhf51-3000', function () {
             done()
         })
 
+        it('should return 304 for swagger', async done => {
+            const response = await request.get('/api/docs')
+            expect(response.status).toBe(304)
+            done()
+        })
+
         it('should return 404 for unknown route', async done => {
             const response = await request.get('/something')
             expect(response.status).toBe(404)
