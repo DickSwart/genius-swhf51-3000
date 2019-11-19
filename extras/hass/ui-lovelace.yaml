@@ -1,0 +1,72 @@
+title: Genius SW-HF 5.1 3000 Remote Control
+
+resources:
+  - url: /community_plugin/button-card/button-card.js
+    type: module
+
+views:
+  - title: Labs
+    icon: mdi:test-tube
+    path: labs
+    cards:
+      - type: vertical-stack
+        cards:
+          - type: "custom:button-card"
+            color_type: label-card
+            name: Genius SW-HF 5.1 3000 Remote Control
+            template: header_button
+          - type: horizontal-stack
+            cards:
+              - type: "custom:button-card"
+                name: "Power"
+                icon: mdi:power
+                show_icon: true
+                show_name: false
+                tap_action:
+                  action: call-service
+                  service: rest_command.genius_swhf51_3000_command
+                  service_data:
+                    command: POWER
+              - type: "custom:button-card"
+                name: "Volume Down"
+                icon: mdi:volume-minus
+                show_icon: true
+                show_name: false
+                tap_action:
+                  action: call-service
+                  service: rest_command.genius_swhf51_3000_command
+                  service_data:
+                    command: VOL-
+
+                hold_action:
+                  action: call-service
+                  service: rest_command.genius_swhf51_3000_command
+                  repeat: 500
+                  service_data:
+                    command: VOL-
+              - type: "custom:button-card"
+                name: "Volume Up"
+                icon: mdi:volume-plus
+                show_icon: true
+                show_name: false
+                tap_action:
+                  action: call-service
+                  service: rest_command.genius_swhf51_3000_command
+                  service_data:
+                    command: VOL+
+                hold_action:
+                  action: call-service
+                  service: rest_command.genius_swhf51_3000_command
+                  repeat: 500
+                  service_data:
+                    command: VOL+
+              - type: "custom:button-card"
+                name: "Mute"
+                icon: mdi:volume-off
+                show_icon: true
+                show_name: false
+                tap_action:
+                  action: call-service
+                  service: rest_command.genius_swhf51_3000_command
+                  service_data:
+                    command: MUTE
