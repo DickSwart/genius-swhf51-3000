@@ -33,7 +33,6 @@ $ cd genius-swhf51-3000
 $ npm install
 ```
 ## Usage
-Run the application.
 ```bash
 # Run application production
 $ npm start
@@ -41,6 +40,10 @@ $ npm start
 # Run application development
 $ npm run start-dev
 ```
+### Viewing
+
+Accessing the remote web-ui, open a browser and navigate to ``http://SERVER:8080/``, to access the Swagger (api documentation) navigate to ``http://SERVER:8080/api/docs``.
+
 ## Credits
 - [lirc_web](https://github.com/alexbain/lirc_web)
 - [lirc_node](https://github.com/alexbain/lirc_node)
