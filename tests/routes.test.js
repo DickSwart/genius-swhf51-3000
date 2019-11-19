@@ -1,17 +1,6 @@
-// const request = require('supertest');
-// const app = require('../app');
-
-// describe('Test the root path', () => {
-//     test('It should response the GET method', () => {
-//         return request(app).get("/").then(response => {
-//             expect(response.statusCode).toBe(200)
-//         })
-//     });
-// })
-
-const app = require('../app') // Link to your server file
-const supertest = require('supertest')
-const request = supertest(app)
+const app = require('../app');
+const supertest = require('supertest');
+const request = supertest(app);
 
 describe('genius-swhf51-3000', function () {
     describe('Routs', () => {
