@@ -49,9 +49,7 @@ Accessing the remote web-ui, open a browser and navigate to ``http://SERVER:8080
 
 ### Home Assistant
 
-<p align="center">
-  <img src="/extras/images/screenshot-hass-ui-lovelace.png">
-</p>
+![Home Assistant Buttons](/extras/images/screenshot-hass-ui-lovelace.png)
 
 Add a rest command to the configuration.yaml and then in lovelace use ["Button Card"](https://github.com/custom-cards/button-card#manual-installation) for the buttons.
 
