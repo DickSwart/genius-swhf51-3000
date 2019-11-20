@@ -5,6 +5,7 @@
 
 [![](https://img.shields.io/badge/author-@dnswart-blue.svg?style=flat-square)](https://twitter.com/dnswart)
 ![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/dickswart/genius-swhf51-3000?style=flat-square)
+[![Coverage Status](https://coveralls.io/repos/github/DickSwart/genius-swhf51-3000/badge.svg?branch=master)](https://coveralls.io/github/DickSwart/genius-swhf51-3000?branch=master)
 
 ``genius-swhf51-3000`` is a [NodeJS](http://nodejs.org) app that creates a web interface & RESTful API for the [LIRC](http://lirc.org) project. It uses [lirc_node](https://github.com/alexbain/lirc_node) to handle communication between [LIRC](http://lirc.org) and [NodeJS](http://nodejs.org).
 
