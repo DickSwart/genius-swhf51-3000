@@ -82,4 +82,38 @@ describe('genius-swhf51-3000', function () {
             });
         });
     });
+
+    describe('remote', () => {
+        describe('GET', () => {
+            it('should return 200', async done => {
+                const response = await request.get('/api/v1/remote');
+                expect(response.status).toBe(200);
+                done();
+            });
+
+            it('should return a remote', async done => {
+                const response = await request.get('/api/v1/remote');
+                const expected = {
+                    name: 'GeniusSW-HF5.1-3000',
+                    commands: ["POWER", "VOL+", "VOL-", "MUTE", "WOOF+", "WOOF-", "AUX", "5.1", "SURR+", "SURR-", "CEN+", "CEN-", "FRONT+", "FRONT-", "RESET"]
+                };
+                expect(response.status).toBe(200);
+                expect(response.body).toStrictEqual(expected);
+                done();
+            });
+        });
+        describe('POST', () => {
+            it('should return 200', async done => {
+                const response = await request.post('/api/v1/remote/POWER');
+                expect(response.status).toBe(200);
+                done();
+            });
+
+            it('invalid command should return 404', async done => {
+                const response = await request.post('/api/v1/remote/xxxx');
+                expect(response.status).toBe(404);
+                done();
+            });
+        });
+    });
 })
