@@ -15,13 +15,13 @@ var app = express();
 
 // set the default remote name for lircNode
 lircNode.defaultRemoteName = 'GeniusSW-HF5.1-3000';
-// based on node environment, initialize connection to lircNode or use test data
+// based on node environment, use test data
 if (process.env.NODE_ENV === 'development') {
   lircNode.remotes = require(__dirname + '/tests/data/remotes.json');
   lircNode.init = function(){}; 
-} else {
-  lircNode.init();
 }
+// initialize connection to lircNode
+lircNode.init();
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
