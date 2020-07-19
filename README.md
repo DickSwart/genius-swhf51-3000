@@ -1,6 +1,6 @@
 # Genius SW-HF5.1 3000 - Remote Control
 <p align="center">
-    <img src="/public/images/SwartNinjaLogoV2.svg" alt="SwartNinja logo" height="150">
+    <img src="https://raw.githubusercontent.com/DickSwart/dickswart.github.io/master/assets/images/logo/swart-ninja-logo-long.svg" alt="SwartNinja logo" height="150">
 </p>
 
 [![](https://img.shields.io/badge/author-@dnswart-blue.svg?style=flat-square)](https://twitter.com/dnswart)
